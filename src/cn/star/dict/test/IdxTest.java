@@ -15,57 +15,54 @@ import cn.star.dict.Word;
 
 public class IdxTest {
 	// E:\excel\stardict-powerword2010_1_501-2.4.2\powerword2010_1_501.ifo
-	public static final String base = "e:\\excel\\";
+	public static final String base = "E:\\opt\\";
 
 	// public static final String base =
 	// "e:\\excel\\stardict-powerword2011_1_900-2.4.2\\";
 
 	public static void main(String[] args) throws FileNotFoundException {
-//		Dictionary enToZh = new Dictionary();
-//		Dictionary zhToEn = new Dictionary();
-//		// dict.load(base + "powerword2011_1_900.ifo");
-//		enToZh.load(base + "stardict-langdao-ec-gb-2.4.2\\langdao-ec-gb.ifo");
-//		zhToEn.load(base + "stardict-langdao-ce-gb-2.4.2\\langdao-ce-gb.ifo");
-//		// dict.load(base + "powerword2010_1_501.ifo"); // 金山简明英汉词典
-//		System.out.println(enToZh.getInfo().getBookName());
-//		System.out.println(enToZh.getInfo().getAuthor());
-//		System.out.println("收录词数：" + enToZh.getInfo().getWordCount());
-//		Scanner scan = new Scanner(System.in);
-//		String w = null;
-//		while (true) {
-//			System.out.println("请输入要查询的单词：");
-//			if ("exit".equals(w)) {
-//				break;
-//			}
-//			w = scan.nextLine();
-//			if (w == null || "".equals(w)) {
-//				continue;
-//			}
-//			Word wor = enToZh.select(w.trim());
-//			Word zh = zhToEn.select(w.trim());
-//			if (zh == null && wor == null) {
-//				System.out.println("词典中尚未收录 " + w);
-//			} else {
-//				if (zh != null) {
-//					System.out.println("<-- " + zhToEn.getInfo().getBookName() + " -->");
-//					System.out.println(zh.getWord());
-//					System.out.println(zh.getExplanation());
-//				}
-//				if (wor != null) {
-//					System.out.println("<-- " + enToZh.getInfo().getBookName() + " -->");
-//					System.out.println(wor.getWord());
-//					System.out.println(wor.getExplanation());
-//				}
-//			}
-//
-//			System.out.println();
-//
-//		}
-//		scan.close();
-		long t=Long.MAX_VALUE;
-		System.out.println(Integer.MAX_VALUE/1000/60/60/24);
-		
-	} 
+		Dictionary enToZh = new Dictionary();
+		Dictionary zhToEn = new Dictionary();
+		// dict.load(base + "powerword2011_1_900.ifo");
+		enToZh.load(base + "stardict-langdao-ec-gb-2.4.2\\langdao-ec-gb.ifo");
+		zhToEn.load(base + "stardict-langdao-ce-gb-2.4.2\\langdao-ce-gb.ifo");
+		// dict.load(base + "powerword2010_1_501.ifo"); // 金山简明英汉词典
+		System.out.println(enToZh.getInfo().getBookName());
+		System.out.println(enToZh.getInfo().getAuthor());
+		System.out.println("收录词数：" + enToZh.getInfo().getWordCount());
+		Scanner scan = new Scanner(System.in);
+		String w = null;
+		while (true) {
+			System.out.println("请输入要查询的单词：");
+			if ("exit".equals(w)) {
+				break;
+			}
+			w = scan.nextLine();
+			if (w == null || "".equals(w)) {
+				continue;
+			}
+			Word wor = enToZh.select(w.trim());
+			Word zh = zhToEn.select(w.trim());
+			if (zh == null && wor == null) {
+				System.out.println("词典中尚未收录 " + w);
+			} else {
+				if (zh != null) {
+					System.out.println("<-- " + zhToEn.getInfo().getBookName() + " -->");
+					System.out.println(zh.getWord());
+					System.out.println(zh.getExplanation());
+				}
+				if (wor != null) {
+					System.out.println("<-- " + enToZh.getInfo().getBookName() + " -->");
+					System.out.println(wor.getWord());
+					System.out.println(wor.getExplanation());
+				}
+			}
+
+			System.out.println();
+
+		}
+		scan.close();
+	}
 
 	@Test
 	public void myDict() throws IOException {
@@ -105,6 +102,4 @@ public class IdxTest {
 		out.close();
 	}
 
-	
-	
 }

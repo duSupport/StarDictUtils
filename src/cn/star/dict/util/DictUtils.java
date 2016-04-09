@@ -61,10 +61,7 @@ public class DictUtils {
 		double size = length;
 		String[] format = { "B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
 		int num = 0;
-		while (true) {
-			if (size > 0 && size < 1024) {
-				break;
-			}
+		while (size > 1024) {
 			size /= 1024.0;
 			num++;
 		}
@@ -73,6 +70,6 @@ public class DictUtils {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(formatSize(5000000));
+		System.out.println(formatSize(Integer.MAX_VALUE));
 	}
 }
